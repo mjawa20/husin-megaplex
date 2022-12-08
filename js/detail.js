@@ -132,8 +132,25 @@ const getFilmById = (database, id) => {
 }
 
 function getId() {
-  let url = document.URL
-  return url.split('?')[1].split('=')[1]
+  let url = document.URL   
+  let id =  url.split('?')[1]
+  return id.split('=')[1]
+}
+
+function beli(){
+  let nama = document.getElementById('nama').value
+  let jam = document.getElementById('jam').value
+  let jumlah = document.getElementById('jumlah').value
+
+  if(!nama || !jam || !jumlah){
+    alert('masukkan input yang benar')
+    return 
+  }
+  
+  localStorage.setItem('item', JSON.stringify({
+    nama, jam , jumlah
+  }))
+  window.location.href="index.html"
 }
 
 

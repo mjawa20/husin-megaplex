@@ -147,6 +147,14 @@ const shortlength = (max, text) => {
 }
 
 function render() {
+    const item = localStorage.getItem('item')
+
+    if(item){
+     let data = JSON.parse(item)
+     alert(`selamat ${data.nama} anda telah membeli tiket ${data.jumlah} untuk jam ${data.jam} `)
+     localStorage.setItem('item', '')   
+    }
+
     let abroad = document.getElementById("abroad")
     let local = document.getElementById("local")
 
