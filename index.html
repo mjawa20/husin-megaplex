@@ -15,7 +15,8 @@
     <div>
         <div class="navbar bg-base-100">
             <div class="navbar-start">
-                <a class="btn btn-ghost normal-case text-xl" href="index.html">PARK HOO SIN CINEPLEX</a>
+
+                <a class="btn btn-ghost normal-case text-xl" href="index.html"><img src="/asset/icons8-cinema.gif" style="height: 40px;" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PARK HOO SIN CINEPLEX</a>
             </div>
             <div class="navbar-center">
                 <ul class="menu menu-horizontal p-0">
@@ -24,7 +25,7 @@
                 </ul>
             </div>
             <div class="navbar-end">
-                <a class="btn">PROMO WEEKEND</a>
+                <a class="btn btn-warning" href="cart.html">History Pembelian</a>
             </div>
         </div>
     </div>
@@ -42,7 +43,8 @@
                     <p class="mb-5">
                         Website penyedia tiket bioskop yang apabila anda membeli tiket disini anda membantu perekonomian kami semua
                     </p>
-                    <button class="btn btn-primary">KLIK LANGSUNG GAN</button>
+                    <!-- <button class="btn btn-primary">KLIK LANGSUNG GAN</button> -->
+                    <label for="my-modal-6" class="btn btn-primary">CEK PROMO</label>
                 </div>
             </div>
         </div>
@@ -78,31 +80,11 @@
         </div>
         <!-- contents end -->
 
-        <!-- modals -->
-        <div>
-            <div class="modal " id="my-modal-2 ">
-                <div class="modal-box ">
-                    <h3 class="font-bold text-lg ">
-                        Congratulations random Internet user!
-                    </h3>
-                    <p class="py-4 ">
-                        You've been selected for a chance to get one year of subscription to use Wikipedia for free!
-                    </p>
-                    <div class="modal-action ">
-                        <input type="radio " name="radio-1 " class="radio " checked />
-                        <input type="radio " name="radio-1 " class="radio " />
-                        <a href="# " class="btn ">Yay!</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- modals end -->
-
         <!-- footer -->
         <footer class="mt-20 footer footer-center p-10 bg-base-200 text-base-content rounded">
             <div class="grid grid-flow-col gap-4">
-                <a class="link link-hover">Film Mancanegara</a>
-                <a class="link link-hover">Film Lokal</a>
+                <a class="link link-hover" href="/index.html#filmmanca">Film Mancanegara</a>
+                <a class="link link-hover" href="/index.html#lokal">Film Lokal</a>
             </div>
             <div>
                 <div class="grid grid-flow-col gap-4">
@@ -116,7 +98,20 @@
             </div>
         </footer>
         <!-- footer end -->
-        
+
+        <!-- modal -->
+        <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+        <div class="modal modal-bottom sm:modal-middle">
+            <div class="modal-box">
+                <h3 class="font-bold text-lg">Wah sepertinya kamu kurang gercep yah</h3>
+                <p class="py-4">Promo Flash Sale telah habis terjual , terimakasih atas antusiasme sobat per-film an semua yang telah berlangganan</p>
+                <div class="modal-action">
+                    <label for="my-modal-6" class="btn">OK sob!</label>
+                </div>
+            </div>
+        </div>
+        <!-- modal end -->
+
         <script src="js/index.js"></script>
 </body>
 

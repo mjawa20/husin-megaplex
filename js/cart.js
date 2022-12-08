@@ -112,7 +112,7 @@ let database = [{
     },
 ]
 
-let cartData = JSON.parse(localStorage.getItem('item'))
+let cartData = JSON.parse(localStorage.getItem("item"))
 
 const getFilmById = (database, id) => {
     let result = {}
@@ -134,36 +134,35 @@ const getFilmById = (database, id) => {
 }
 
 const deleteData = (index) => {
-    cartData = cartData.splice(index, 1);
+    cartData = cartData.splice(index, 1)
     console.log(cartData.splice(index, 1))
-    localStorage.setItem('item', JSON.stringify(cartData))
+    localStorage.setItem("item", JSON.stringify(cartData))
     window.location.reload()
 }
 
-
 function render() {
-    let cart = document.getElementById('cart')
+    let cart = document.getElementById("cart")
     if (!cartData || !cartData.length) {
         cart.innerHTML = "<h4>Data tidak Ada</h4>"
     }
     for (let i = 0; i < cartData.length; i++) {
         cart.innerHTML += `
-        <ul>
+        <ul  class="flex justify-evenly">
         <li class="flex flex-row">
-            <h1 class="mr-7">${cartData[i].nama}</h1>
-            <h1 class="mr-7">${cartData[i].jumlah}</h1>
-            <h1 class="mr-7">${cartData[i].jam}</h1>
-            <button id="delete" class="btn btn-sm btn-secondary mr-7">
-              DELETE
+            <h1 class="mr-28 py-3">${cartData[i].nama}</h1>
+            <h1 class="mr-28 py-3">${cartData[i].jumlah}</h1>
+            <h1 class="mr-28 py-3">${cartData[i].jam}</h1>
+            <button id="delete" class="btn btn-sm btn-secondary py-3">
+            DELETE
             </button>
-                  </li>
+            </li>
               </ul>
         `
 
-        document.getElementById("delete").addEventListener("click", () => deleteData(i));
-
+        document
+            .getElementById("delete")
+            .addEventListener("click", () => deleteData(i))
     }
-
 }
 
 render()

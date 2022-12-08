@@ -133,19 +133,19 @@ const getFilmById = (database, id) => {
 
 function getId() {
     let url = document.URL
-    let id = url.split('?')[1]
-    return id.split('=')[1]
+    let id = url.split("?")[1]
+    return id.split("=")[1]
 }
 
 function beli() {
-    const carts = JSON.parse(localStorage.getItem('item'))
-    let nama = document.getElementById('nama').value
-    let jam = document.getElementById('jam').value
-    let jumlah = document.getElementById('jumlah').value
+    const carts = JSON.parse(localStorage.getItem("item"))
+    let nama = document.getElementById("nama").value
+    let jam = document.getElementById("jam").value
+    let jumlah = document.getElementById("jumlah").value
 
     if (!nama || !jam || !jumlah) {
         console.log(Number(jumlah))
-        alert('masukkan input yang benar geh')
+        alert("masukkan input yang benar geh")
         return
     }
     if (isNaN(Number(jumlah))) {
@@ -155,42 +155,40 @@ function beli() {
 
     carts.push({ nama, jam, jumlah, product: getId() })
 
-
-    localStorage.setItem('item', JSON.stringify(carts))
+    localStorage.setItem("item", JSON.stringify(carts))
     window.location.href = "cart.html"
 }
-
 
 function render() {
     let id = getId()
 
-    let detail = document.getElementById('detail')
+    let detail = document.getElementById("detail")
     let data = getFilmById(database, id)
 
     detail.innerHTML = `
   <div class="box">
-      <div class="img">
-          <img src="${data.image}" alt="batman" />
+      <div class="img"  style="height:80%;width:auto">
+          <img src="${data.image}" alt="gambar film" style="height:100%;width:100%"/>
       </div>
       <div>
           <h3 class="title">${data.judul}</h3>
           <div>
-              <span class="btn">${data.durasi}</span>
+              <span class="btn mr-10">${data.durasi}</span>
+              <span class=" btn btn-warning">Most-Watched</span>
           </div>
           <p class="sinopsis">
             ${data.sinopsis}
           </p>
           <div class="detail">
-              <p>sutradara :</p>
+              <p>Sutradara</p>
               <p>${data.sutradara}</p>
           </div>
           <div class="detail">
-              <p>Bahasa :</p>
+              <p>Bahasa</p>
               <p>${data.bahasa}</p>
           </div>
       </div>
   </div>`
-
 }
 
 render()
