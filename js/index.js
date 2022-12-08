@@ -1,4 +1,5 @@
 let database = [{
+        id:1,
         judul: "Batman",
         sutradara: "Matt Reeves",
         durasi: "176 minutes",
@@ -26,6 +27,7 @@ let database = [{
         image: "asset/Doctor of Strange.jpg",
     },
     {
+        id:4,
         judul: "Godzilla",
         sutradara: "Michael Dougherty",
         durasi: "164 minutes",
@@ -174,7 +176,7 @@ function render() {
             <div class="card-body ">
                 <h2 class="card-title ">${localData[i].judul}</h2>
                 <p class="mb-6">${shortlength(100, localData[i].sinopsis)}</p>
-                <a href="detailFilm.html" class="btn ">Beli Tiket Sekarang</a>
+                <a href="detailFilm.html?id=" class="btn ">Beli Tiket Sekarang</a>
             </div>
         </div>`
     }
