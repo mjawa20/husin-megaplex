@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.42.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>CINEPLEX</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -32,23 +33,20 @@
     <!-- navbar end -->
     <div>
         <div class="glass container">
-            <div class="flex my-7" style="height: 70vh">
+            <h1 class="text-center mb-10">History Pembelian</h1>
+            <div style="height: 70vh">
                 <ul>
                     <li class="flex flex-row">
-                        <h1 class="mr-7">NAMA</h1>
-                        <h1 class="mr-7">JUMLAH TIKET</h1>
-                        <h1 class="mr-7">JAM TAYANG</h1>
-                        <button onclick="beli()" class="btn btn-sm btn-warning mr-7">
-                EDIT
-              </button>
-                        <button onclick="beli()" class="btn btn-sm btn-secondary mr-7">
-                DELETE
-              </button>
+                        <h1 class="mr-7">nama</h1>
+                        <h1 class="mr-7">jumlah tiket</h1>
+                        <h1 class="mr-7">jam tayang</h1>
                     </li>
                 </ul>
+                <div id="cart"></div>
             </div>
         </div>
     </div>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

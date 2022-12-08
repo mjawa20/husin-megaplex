@@ -112,6 +112,8 @@ let database = [{
     },
 ]
 
+let cartData = JSON.parse(localStorage.getItem('item'))
+
 const getFilmById = (database, id) => {
     let result = {}
         // if (
@@ -131,65 +133,36 @@ const getFilmById = (database, id) => {
     return result
 }
 
-function getId() {
-    let url = document.URL
-    let id = url.split('?')[1]
-    return id.split('=')[1]
-}
-
-function beli() {
-    const carts = JSON.parse(localStorage.getItem('item'))
-    let nama = document.getElementById('nama').value
-    let jam = document.getElementById('jam').value
-    let jumlah = document.getElementById('jumlah').value
-
-    if (!nama || !jam || !jumlah) {
-        console.log(Number(jumlah))
-        alert('masukkan input yang benar geh')
-        return
-    }
-    if (isNaN(Number(jumlah))) {
-        alert("jumlah harus angka geh")
-        return
-    }
-
-    carts.push({ nama, jam, jumlah, product: getId() })
-
-
-    localStorage.setItem('item', JSON.stringify(carts))
-    window.location.href = "cart.html"
+const deleteData = (index) => {
+    cartData = cartData.splice(index, 1);
+    console.log(cartData.splice(index, 1))
+    localStorage.setItem('item', JSON.stringify(cartData))
+    window.location.reload()
 }
 
 
 function render() {
-    let id = getId()
+    let cart = document.getElementById('cart')
+    if (!cartData || !cartData.length) {
+        cart.innerHTML = "<h4>Data tidak Ada</h4>"
+    }
+    for (let i = 0; i < cartData.length; i++) {
+        cart.innerHTML += `
+        <ul>
+        <li class="flex flex-row">
+            <h1 class="mr-7">${cartData[i].nama}</h1>
+            <h1 class="mr-7">${cartData[i].jumlah}</h1>
+            <h1 class="mr-7">${cartData[i].jam}</h1>
+            <button id="delete" class="btn btn-sm btn-secondary mr-7">
+              DELETE
+            </button>
+                  </li>
+              </ul>
+        `
 
-    let detail = document.getElementById('detail')
-    let data = getFilmById(database, id)
+        document.getElementById("delete").addEventListener("click", () => deleteData(i));
 
-    detail.innerHTML = `
-  <div class="box">
-      <div class="img">
-          <img src="${data.image}" alt="batman" />
-      </div>
-      <div>
-          <h3 class="title">${data.judul}</h3>
-          <div>
-              <span class="btn">${data.durasi}</span>
-          </div>
-          <p class="sinopsis">
-            ${data.sinopsis}
-          </p>
-          <div class="detail">
-              <p>sutradara :</p>
-              <p>${data.sutradara}</p>
-          </div>
-          <div class="detail">
-              <p>Bahasa :</p>
-              <p>${data.bahasa}</p>
-          </div>
-      </div>
-  </div>`
+    }
 
 }
 
