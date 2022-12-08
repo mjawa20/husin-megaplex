@@ -8,18 +8,18 @@ let database = [
         image: "asset/Batman.jpg"
     },
     {
-        judul: 'Black Panter: Wakanda Forever',
-        sutradara:"Ryan Coogler",
-        durasi:"161 menit",
-        bahasa:"inggris",
+        judul: "Black Panter: Wakanda Forever",
+        sutradara: "Ryan Coogler",
+        durasi: "161 menit",
+        bahasa: "inggris",
         sinopsis: "Black Panther: Wakanda Forever mengisahkan tentang kerajaan Wakanda yang sedang dilanda kesedihan. Mereka harus kehilangan sosok raja mereka yaitu King T'Chala yang telah meninggal dunia. Rakyat Wakanda tidak hanya menghadapi kesedihan, tetapi juga harus berjuang untuk melindungi kerajaan tersebut.",
         image: "asset/black panter 2.jpg"
     },
     {
-        judul: 'Doctor Strange in the Multiverse of Madness',
-        sutradara:"Sam Raimi",
-        durasi:"126 minutes",
-        bahasa:"inggris",
+        judul: "Doctor Strange in the Multiverse of Madness",
+        sutradara: "Sam Raimi",
+        durasi: "126 minutes",
+        bahasa: "inggris",
         sinopsis: "Doctor Strange 2 mengisahkan perjuangan Stephen Strange (Benedict Cumberbatch) menghadapi berbagai kejadian aneh akibat pintu lintas semesta yang terbuka pasca kejadian di Spider-Man No way Home.",
         image: "asset/Doctor of Strange.jpg" 
     },
@@ -33,18 +33,18 @@ let database = [
         
         },
     {
-        judul: 'Jurassic World Dominion',
-        sutradara:"Colin Trevorrow",
-        durasi:"146 minutes",
-        bahasa:"inggris",
+        judul: "Jurassic World Dominion",
+        sutradara: "Colin Trevorrow",
+        durasi: "146 minutes",
+        bahasa: "inggris",
         sinopsis: "Dilansir dari Jurassic Wiki, Dominion terjadi empat tahun setelah Isla Nublar dihancurkan. Dinosaurus sekarang hidup dan berburu bersama manusia di seluruh dunia. Keseimbangan yang rapuh ini akan membentuk kembali masa depan dan menentukan apakah manusia akan tetap menjadi predator puncak di planet yang sekarang ditempati bersama makhluk paling menakutkan dalam sejarah.",
         image:"asset/Jurrasic World.jpg"
     },
     {
-        judul: 'KKN di Desa Penari',
-        sutradara:"Awi Suryadi",
-        durasi:"130 minutes",
-        bahasa:"indonesia",
+        judul: "KKN di Desa Penari",
+        sutradara: "Awi Suryadi",
+        durasi: "130 minutes",
+        bahasa: "indonesia",
         sinopsis: "KKN di Desa Penari menceritakan berbagai kejadian mistis yang dialami enam mahasiswa ketika menjalani KKN di sebuah desa terpencil. Film ini menceritakan enam mahasiswa yang sedang menjalani Kuliah Kerja Nyata (KKN) di sebuah desa terpencil.",
         image:"asset/KKN di Desa Penari.jpg"
     },
@@ -57,26 +57,26 @@ let database = [
         image:"asset/poster garuda di dadaku.jpg"
     },
     {
-        judul: 'The Dark Knight',
-        sutradara:"Christopher Nolan",
-        durasi:"152 minutes",
-        bahasa:"inggris",
+        judul: "The Dark Knight",
+        sutradara: "Christopher Nolan",
+        durasi: "152 minutes",
+        bahasa: "inggris",
         sinopsis: "Sebuah bank di Gotham City dirampok oleh sekelompok kriminal. Joker memanipulasi dengan menyuruh mereka saling membunuh satu sama lain agar mendapatkan bagian yang lebih besar. Para perampok itu pun saling membunuh satu sama lain dan hanya menyisakan Joker seorang yang selamat.",
         image: "asset/poster the dark knight.jpg"
     },
     {
-        judul: 'Scream',
-        sutradara:"Matt Bettinelli-Olpin, Tyler Gillett",
-        durasi:"114 minutes",
-        bahasa:"inggris",
+        judul: "Scream",
+        sutradara: "Matt Bettinelli-Olpin, Tyler Gillett",
+        durasi: "114 minutes",
+        bahasa: "inggris",
         sinopsis: "Film Scream 1 berkisah tentang kehidupan seorang pelajar SMA bernama Sidney Prescott (Neve Campbell). Dia mendapat teror setelah kematian ibunya. Tak cuma Sidney, seluruh teman-temannya yang merupakan remaja juga mendapat terror di kota Woodsboro. Teror dimulai dengan telepon yang mengajukan beberapa pertanyaan.",
         image: "asset/scream.jpg" 
     },
     {
-        judul: 'Sonic the Hedgehog 2',
-        sutradara:"Jeff Fowler",
-        durasi:"122 minutes",
-        bahasa:"inggris",
+        judul: "Sonic the Hedgehog 2",
+        sutradara: "Jeff Fowler",
+        durasi: "122 minutes",
+        bahasa: "inggris",
         sinopsis: "Sonic the Hedgehog 2 adalah film bergenre animasi, aksi, dan petualangan yang bercerita tentang kembalinya Dr. Robotnik ke Bumi dengan pasukan baru.",
         image: "asset/sonic.jpg" 
     },
@@ -89,10 +89,10 @@ let database = [
         image: "asset/Sri Asih.jpg" 
     },
     {
-        judul: 'Turning Year',
-        sutradara:"Domee Shi",
-        durasi:"100 minutes",
-        bahasa:"inggris",
+        judul: "Turning Year",
+        sutradara: "Domee Shi",
+        durasi: "100 minutes",
+        bahasa: "inggris",
         sinopsis: "Film Turning Red bercerita tentang seorang gadis berusia 13 tahun yang bernama Meilin “Mei” Lee yang hidup di Toronto. Mei merupakan sosok remaja yang unik dan percaya diri. Ia memiliki tiga orang teman baik. Mei banyak menghabiskan waktu bersama teman-teman dekatnya.",
         image: "asset/Turning Year.jpg", 
     },
@@ -112,11 +112,15 @@ function filterMovie(by,database){
 }
 // console.log(filterMovie(database))
 
-
-const getFilmByIndex = (database,index) => {
-    if(index === undefined || index >= database.length || index < 0 || typeof index !=="number"){
+const getFilmByIndex = (database, index) => {
+    if (
+        index === undefined ||
+        index >= database.length ||
+        index < 0 ||
+        typeof index !== "number"
+    ) {
         return "mikir"
-    }else{
+    } else {
         return database[index]
     }
 }

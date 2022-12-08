@@ -8,10 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.42.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>CINEPLEX</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <!-- navbar -->
     <div>
         <div class="navbar bg-base-100">
             <div class="navbar-start">
@@ -29,11 +30,12 @@
             </div>
         </div>
     </div>
+    <!-- navbar end -->
     <div>
         <div class="glass container">
-            <div class="box" >
+            <div class="box">
                 <div class="img">
-                    <img src="asset/Batman.jpg" alt="batman"  >
+                    <img src="asset/Batman.jpg" alt="batman" />
                 </div>
                 <div>
                     <h3 class="title">Batman</h3>
@@ -41,22 +43,43 @@
                         <span class="btn">2014</span>
                         <span class="btn">124min</span>
                     </div>
-                    <p class="sinopsis">Nemo enim ipsam volup tatem quia volup tas sit asper natur aut odit aut fugit volup quia volup tas sit asper natur aut odit aut fugit volup tatem sequi nesc iunt.</p>
+                    <p class="sinopsis">
+                        Nemo enim ipsam volup tatem quia volup tas sit asper natur aut odit aut fugit volup quia volup tas sit asper natur aut odit aut fugit volup tatem sequi nesc iunt.
+                    </p>
                     <div class="detail">
                         <p>sutradara :</p>
-                        <p>Park Hoo sin </p>
+                        <p>Park Hoo sin</p>
                     </div>
                     <div class="detail">
                         <p>Bahasa :</p>
-                        <p>Indonesia </p>
+                        <p>Indonesia</p>
                     </div>
                 </div>
             </div>
             <div>
-                <h6 class="title2">
-                    Batman
-                </h6>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                <h6 class="title2">Batman</h6>
+                <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                </p>
+            </div>
+            <div class="flex my-7">
+                <input type="text" placeholder="Nama Pemesan" class="input input-bordered w-full max-w-xs mr-5" />
+                <select class="select max-w-xs mr-5">
+            <option disabled selected>Pilih Waktu Nonton</option>
+            <option>11.00</option>
+            <option>13.00</option>
+            <option>15.00</option>
+            <option>17.00</option>
+            <option>19.00</option>
+          </select>
+                <div class="form-control mr-5">
+                    <label class="input-group">
+              <span>jumlah</span>
+              <input type="text" placeholder="0" class="input input-bordered" />
+              <span>tiket</span>
+            </label>
+                </div>
+                <button class="btn btn-warning">BELI SEKARANG</button>
             </div>
         </div>
     </div>
