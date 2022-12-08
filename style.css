@@ -1,0 +1,39 @@
+.container{
+  margin-top: 50px !important;
+  width: 1000px !important;
+  margin: auto;
+  padding: 30px;
+  border-radius: 20px;
+}
+.title{
+  font-size: 50px;
+}
+.btn{
+  padding: 10px !important;
+  min-height: 2rem !important;
+  height: 1rem !important;
+  font-size: 11px;
+}
+.sinopsis{
+  margin:  20px 0;
+}
+.box{
+  display: flex;
+  gap: 20px;
+}
+.img{
+  width: 400px;
+  height: 400px;
+}
+
+.detail{
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+}
+
+
+.title2{
+  font-size: 25px;
+  margin-bottom: 10px;
+}
