@@ -55,6 +55,7 @@ let database = [{
         image: "asset/KKN di Desa Penari.jpg",
     },
     {
+        id:7,
         judul: "Garuda di dadaku",
         sutradara: "Ifa Isfansyah",
         durasi: "133 minutes",
@@ -91,6 +92,7 @@ let database = [{
         image: "asset/sonic.jpg",
     },
     {
+        id:11,
         judul: "Sri Asih",
         sutradara: "Upi",
         durasi: "135 minutes",
@@ -161,7 +163,7 @@ function render() {
             <div class="card-body ">
                 <h2 class="card-title ">${abroadData[i].judul}</h2>
                 <p class="mb-6">${shortlength(100, abroadData[i].sinopsis)}</p>
-                <a href="detailFilm.html" class="btn ">Beli Tiket Sekarang</a>
+                <a href="detailFilm.html?id=${abroadData[i].id}" class="btn ">Beli Tiket Sekarang</a>
             </div>
         </div>`
     }
@@ -176,7 +178,7 @@ function render() {
             <div class="card-body ">
                 <h2 class="card-title ">${localData[i].judul}</h2>
                 <p class="mb-6">${shortlength(100, localData[i].sinopsis)}</p>
-                <a href="detailFilm.html?id=" class="btn ">Beli Tiket Sekarang</a>
+                <a href="detailFilm.html?id=${localData[i].id}" class="btn ">Beli Tiket Sekarang</a>
             </div>
         </div>`
     }
