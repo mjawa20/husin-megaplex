@@ -55,7 +55,7 @@ let database = [{
   image: "asset/KKN di Desa Penari.jpg",
 },
 {
-  id:7,
+  id: 7,
   judul: "Garuda di dadaku",
   sutradara: "Ifa Isfansyah",
   durasi: "133 minutes",
@@ -92,7 +92,7 @@ let database = [{
   image: "asset/sonic.jpg",
 },
 {
-  id:11,
+  id: 11,
   judul: "Sri Asih",
   sutradara: "Upi",
   durasi: "135 minutes",
@@ -122,35 +122,40 @@ const getFilmById = (database, id) => {
   // ) {
   //   return "mikir"
   // } else {
-    for (let i = 0; i < database.length; i++) {
-      if(database[i].id == id){
-        result = database[i]
-      }      
-  //   }
+  for (let i = 0; i < database.length; i++) {
+    if (database[i].id == id) {
+      result = database[i]
+    }
+    //   }
   }
   return result
 }
 
 function getId() {
-  let url = document.URL   
-  let id =  url.split('?')[1]
+  let url = document.URL
+  let id = url.split('?')[1]
   return id.split('=')[1]
 }
 
-function beli(){
+function beli() {
   let nama = document.getElementById('nama').value
   let jam = document.getElementById('jam').value
   let jumlah = document.getElementById('jumlah').value
 
-  if(!nama || !jam || !jumlah){
-    alert('masukkan input yang benar')
-    return 
+  if (!nama || !jam || !jumlah) {
+    console.log(Number(jumlah))
+    alert('masukkan input yang benar geh')
+    return
   }
-  
+  if (isNaN(Number(jumlah))) {
+    alert("jumlah harus angka geh")
+    return
+  }
+
   localStorage.setItem('item', JSON.stringify({
-    nama, jam , jumlah
+    nama, jam, jumlah
   }))
-  window.location.href="index.html"
+  // window.location.href="index.html"
 }
 
 
