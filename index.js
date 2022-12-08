@@ -97,3 +97,31 @@ let database = [
         image: "/asset/Turning Year.jpg", 
     },
 ]
+
+
+function filterMovie(database){
+    let result=[]
+    let obj={}
+    for(let x=0;x<database.length;x++){
+        if(database[x].bahasa === "indonesia"){
+            result.push("Lokal")
+        }else if(database[x].bahasa === "inggris"){
+            result.push("Mancanegara")
+        }
+    }
+
+    return result
+}
+// console.log(megaplex(database))
+
+
+const getFilmByIndex = (database,index) => {
+    if(index === undefined || index >= database.length || index < 0 || typeof index !=="number"){
+        return "mikir"
+    }else{
+        return database[index]
+    }
+}
+
+console.log(getFilmByIndex(database,7));
+
