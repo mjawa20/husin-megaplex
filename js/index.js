@@ -140,7 +140,7 @@ const getFilmByIndex = (database, index) => {
 
 const shortlength = (max, text) => {
     if (text.length > max) {
-        return text.substring(1, max) + " ......"
+        return text.substring(0, max) + " ......"
     }
 
     return text
