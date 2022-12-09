@@ -166,8 +166,9 @@ function beli() {
     }
 
     carts.push({ nama, jam, jumlah, product: getId() })
-
+    
     localStorage.setItem("item", JSON.stringify(carts))
+    alert(`Selamat ${nama} anda telah membeli tiket`)
     window.location.href = "cart.html"
 }
 

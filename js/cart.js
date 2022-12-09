@@ -146,17 +146,17 @@ function render() {
         cart.innerHTML = "<h4>Data tidak Ada</h4>"
     }
     for (let i = 0; i < cartData.length; i++) {
+        let film = getFilmById(database,cartData[i].product).judul
         cart.innerHTML += `
-        <ul  class="flex justify-evenly">
-        <li class="flex flex-row">
-            <h1 class="mr-28 py-3">${cartData[i].nama}</h1>
-            <h1 class="mr-28 py-3">${cartData[i].jumlah}</h1>
-            <h1 class="mr-28 py-3">${cartData[i].jam}</h1>
+        <li class="flex flex-row justify-between items-center">
+            <h1 class="my-5" style="width:20%">${cartData[i].nama}</h1>
+            <h1 class="my-5" style="width:25%">${film}</h1>
+            <h1 class="my-5" style="width:20%">${cartData[i].jumlah}</h1>
+            <h1 class="my-5" style="width:15%">${cartData[i].jam}</h1>
             <button id="delete" class="btn btn-sm btn-secondary py-3">
             DELETE
             </button>
             </li>
-              </ul>
         `
 
         document
